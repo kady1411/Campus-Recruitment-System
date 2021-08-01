@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Job List</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/myStyle.css">
+
+</head>
+<body>
+
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top mb-3">
+    <div class="container">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/jobList">Job List</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="btn btn-default btn-rounded " data-toggle="modal" data-target="#exampleModalLong"
+                       id="signInLink">Admin LogIn</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+
+<!--container-->
+<div class="container">
+
+    <p class="text-center display-4">Apply For Job</p>
+    <p class="text-center text-muted mb-lg-5"> here's your basic info, your applied companys will see.</p>
+
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <form action="/create_applicant" method="POST">
+                <div class="form-group row">
+                    <label for="firstname" class="col-4 col-form-label">First Name</label>
+                    <div class="col-8">
+                        <input required id="firstname" name="firstname" placeholder="First Name" class="form-control here" type="text">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="lastname" class="col-4 col-form-label">Last Name</label>
+                    <div class="col-8">
+                        <input required id="lastname" name="lastname" placeholder="Last Name" class="form-control here"
+                               type="text">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="select" class="col-4 col-form-label">Gender</label>
+                    <div class="col-8">
+                        <input required id="gender" name="gender" placeholder="Gender" class="form-control here"
+                               type="text">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="resume" class="col-4 col-form-label">Resume*</label>
+                    <div class="col-8">
+                        <input required type="file" id="myFile" name="filename">
+                    </div>
+                <div class="form-group row">
+                    <div class="offset-4 col-8">
+                        <button id="sumbit-button" name="submit" type="submit" class="btn btn-primary">Submit Details</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <hr>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="../js/bootstrap.min.js"></script>
+</html>

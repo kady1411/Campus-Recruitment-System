@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Admin Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/myStyle.css">
+
+</head>
+<body>
+
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top mb-3">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="navbar-brand" 
+                       id="signInLink" href="/">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+
+<!--container-->
+<div class="container">
+
+    <br>
+
+    <h3 class="pb-3 mb-4 font-italic border-bottom">
+        Applied Candidates:
+    </h3>
+
+    <!--job list:-->
+    <% for (let i of applicant_list) { %> 
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <div class="card flex-md-row mb-4 box-shadow h-md-250 jobBox3 shadow-lg">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h3><strong class="d-inline-block mb-0 text-primary" ><%= i.firstname %>  <%= i.lastname %></strong></h3>
+                    <p class="mb-0">
+                        <a class="text-dark" href="#"><%= i.gender %></a>
+                    </p>
+                    <br>
+                    <form action="/downloadpdf" method="POST">
+                        <input class="btn btn-primary float-right" type="submit" value="Download Applicant Resume"/>
+                    </form>
+                    <br>
+                    <form action="/downloadexcel" method="POST">
+                        <input class="btn btn-primary float-right" type="submit" value="Download Applicant Details "/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <% } %>
+
+    <hr>
+
+
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="../js/bootstrap.min.js"></script>
+</html>
